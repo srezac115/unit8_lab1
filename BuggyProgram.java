@@ -15,9 +15,13 @@ public class BuggyProgram {
 
     // Method 2: loop with array
     public static int sumEvenNumbers(int[] values) {
-        int sum = 1;
+        if (values == null) {
+            return 0;
+        }
 
-        for (int i = 0; i <= values.length; i++) {
+        int sum = 0;
+
+        for (int i = 0; i < values.length; i++) {
             if (values[i] % 2 == 0) {
                 sum += values[i];
             }
@@ -25,7 +29,7 @@ public class BuggyProgram {
 
         return sum;
     }
-
+    
     // Method 3: loop with bounds (no array)
     public static int sumRange(int start, int end) {
         int sum = 0;
